@@ -30,3 +30,23 @@ area, thus the ".toFixed(num)".
 when adding in all input values when clicking submit. Appending
 to the DOM should enable multiple employee info to be added due
 to newly created list element. */
+
+//figure out a way to sum up all employee salaries
+let totalMonthly = calculatedTotalMonthlySalary(annualSalary);
+
+let totalMonthlyAmount = document.getElementById('totalMonthly');
+totalMonthlyAmount.textContent = `Total Monthly: $${totalMonthly.toFixed(2)}`;
+
+//extra $ was a bit confusing but had to understand that part of it was for the 'string of numbers' and
+// the other was to part of a template literal...to call the monthly salary.
+
+//Need to add a red background color to Total Monthly if it exceeds $20,000.
+if (totalMonthly > 20000) {
+    totalMonthlyAmount.totalMonthly.add('red-background'); 
+}
+    else {
+        totalMonthlyAmount.totalMonthly.remove('red-background');
+    }
+function calculatetotalMonthly(annualSalary){
+    return annualSalary /12;
+}
