@@ -1,0 +1,17 @@
+h1{
+text-align: center;
+background-color: gray;
+color: white;
+}
+
+
+.employee-info{
+height: 25px;
+}
+
+#submit{
+margin-top: 15px;
+margin-left: 670px;
+height: 30px;
+width: 80px;
+}
