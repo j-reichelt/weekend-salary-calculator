@@ -1,20 +1,31 @@
-h1{
-text-align: center;
-background-color: gray;
-color: white;
-    }
+h1 {
+  text-align: center;
+  background-color: gray;
+  color: white;
+}
 
+#employee-info {
+  height: 25px;
+}
 
-#employee-info{
-height: 25px;
-    }
+#submit {
+  margin-top: 15px;
+  margin-left: 670px;
+  height: 30px;
+  width: 80px;
+}
 
-#submit{
-margin-top: 15px;
-margin-left: 670px;
-height: 30px;
-width: 80px;
-    }
+p {
+  background-color: red;
+}
 
-p{background-color: red;
-    }
+th {
+  background-color: lightgray;
+  height: 30px;
+  margin: 15px;
+  text-align: left;
+}
+
+tr {
+  background-color: #e1e1ea;
+}
