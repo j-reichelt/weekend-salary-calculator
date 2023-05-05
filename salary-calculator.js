@@ -291,6 +291,8 @@ function calculateTotalMonthlySalary() {
     totalMonthlySalarySum.classList.remove("red-background");
   }
 }
+/* the if loop should come after calculating the monthly salary
+but it still shows red despite it being < than 20000*/
 
 // Function to delete an employee
 function deleteEmployee(employee) {
