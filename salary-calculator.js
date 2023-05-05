@@ -201,7 +201,7 @@ form.addEventListener("submit", function (event) {
   employees.push(employee);
 
   // Generate Employee List
-  generateEmployeeList();
+  //generateEmployeeList();
 
   // Generate employee table
   generateEmployeeTable();
@@ -254,7 +254,6 @@ function generateEmployeeTable() {
     row.appendChild(jobTitleCell);
     row.appendChild(annualSalaryCell);
     row.appendChild(deleteButtonCell);
-
     employeeTable.appendChild(row);
   });
 }
@@ -265,26 +264,33 @@ function formatSalary(salary) {
 }
 
 // Function to calculate total annual salary
+// Function to calculate total annual salary
 function calculateTotalAnnualSalary() {
-  let totalAnnualSalary = 0;
-  employees.forEach(function(employee){
-totalAnnualSalary += (employee.sannualSalary);
+  totalAnnualSalary = 0;
+  employees.forEach(function (employee) {
+    totalAnnualSalary += employee.annualSalary;
   });
-  return totalAnnualSalary;
+  let totalAnnualSalarySum = document.getElementById("annualSalary");
+  totalAnnualSalarySum.textContent = `Total Annual Cost: $${formatSalary(
+    totalAnnualSalary
+  )}`;
 }
- 
-  // Calculate total monthly salary
-  function calculateTotalMonthlySalary(){
-  let totalMonthlySalary = (calculateTotalAnnualSalary() / 12).toFixed(2);
+
+// Calculate total monthly salary
+function calculateTotalMonthlySalary() {
+  let totalMonthlySalary = totalAnnualSalary / 12;
   let totalMonthlySalarySum = document.getElementById("totalMonthlySalary");
-  totalMonthlySalarySum.textContent = `Total Monthly Cost: $${totalMonthlySalary.toFixed(2)}`;
- 
+  totalMonthlySalarySum.textContent = `Total Monthly Cost: $${totalMonthlySalary.toFixed(
+    2
+  )}`;
+
   // Add a red background color to Total Monthly if it exceeds $20,000
   if (totalMonthlySalary > 20000) {
     totalMonthlySalarySum.classList.add("red-background");
   } else {
     totalMonthlySalarySum.classList.remove("red-background");
-  }}
+  }
+}
 
 // Function to delete an employee
 function deleteEmployee(employee) {
@@ -295,9 +301,3 @@ function deleteEmployee(employee) {
     calculateTotalAnnualSalary();
   }
 }
-
-// Initial generation of employee table and total annual salary
-generateEmployeeTable();
-calculateTotalAnnualSalary();
-// putting this here to allow other dependencies to run
-// first before generating the list
